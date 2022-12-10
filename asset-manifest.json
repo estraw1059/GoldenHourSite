@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/GoldenHourSite/static/css/main.4da388fb.css",
-    "main.js": "/GoldenHourSite/static/js/main.27e44816.js",
+    "main.js": "/GoldenHourSite/static/js/main.c82f239c.js",
     "index.html": "/GoldenHourSite/index.html",
     "main.4da388fb.css.map": "/GoldenHourSite/static/css/main.4da388fb.css.map",
-    "main.27e44816.js.map": "/GoldenHourSite/static/js/main.27e44816.js.map"
+    "main.c82f239c.js.map": "/GoldenHourSite/static/js/main.c82f239c.js.map"
   },
   "entrypoints": [
     "static/css/main.4da388fb.css",
-    "static/js/main.27e44816.js"
+    "static/js/main.c82f239c.js"
   ]
 }
