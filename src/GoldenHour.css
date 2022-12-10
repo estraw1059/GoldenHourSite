@@ -1,0 +1,18 @@
+.card {
+    height: 100%;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-not-golden {
+    background-color: red;
+}
+
+.card-golden {
+    background-color: green;
+}
+
+.cardText {
+    font-size: 2em;
+}

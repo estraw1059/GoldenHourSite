@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from 'react'
+import './GoldenHour.css'
 
 export const GoldenHour = () => {
 
@@ -29,10 +30,12 @@ export const GoldenHour = () => {
         }
     });
 
+    const cardClass = "card " + (isGoldenHour ? "card-golden" : "card-not-golden");
+
     return(
-        <div>
-            <p>Time: {date.toUTCString()}</p>
-            {isGoldenHour ? <p>It is Golden Hour</p> : <p>It is not golden hour</p>}
+        <div className={cardClass}>
+            <div className='cardText'>Current UTC Time: {date.toUTCString()}</div>
+            {isGoldenHour ? <div className='cardText'>It is Golden Hour</div> : <div className='cardText'>It is not golden hour</div>}
         </div>
     );
 
