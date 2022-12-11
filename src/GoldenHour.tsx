@@ -75,7 +75,7 @@ export const GoldenHour = () => {
         <div className={cardClass}>
             <div className='cardText'>Current UTC Time: {date.toUTCString()}</div>
             {isGoldenHour ? <div className='cardText'>It is Golden Hour</div> : <div className='cardText'>It is not golden hour</div>}
-            <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} till next golden hour</div>
+            <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till next golden hour</div>
         </div>
     );
 
