@@ -1,5 +1,6 @@
 import { networkInterfaces } from 'os';
 import React, { useState, useEffect }  from 'react'
+import { Container, Card } from 'react-bootstrap';
 import './GoldenHour.css'
 
 const UTC_MORNING_START_TIME = new Date();
@@ -72,11 +73,13 @@ export const GoldenHour = () => {
     const currentDate = new Date();
 
     return(
-        <div className={cardClass}>
-            <div className='cardText'>Current UTC Time: {date.toUTCString()}</div>
-            {isGoldenHour ? <div className='cardText'>It is Gold Rush Hour</div> : <div className='cardText'>It is not Gold Rush Hour</div>}
-            <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next Gold Rush Hour</div>
-        </div>
+        <Container>
+            <Card className={cardClass}>
+                <div className='cardText'>Current UTC Time: {date.toUTCString()}</div>
+                {isGoldenHour ? <div className='cardText'>It is Gold Rush Hour</div> : <div className='cardText'>It is not Gold Rush Hour</div>}
+                <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next Gold Rush Hour</div>
+            </Card>
+        </Container>
     );
 
 }
