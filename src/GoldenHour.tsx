@@ -71,7 +71,7 @@ export const GoldenHour = () => {
     const cardClass = "card " + (isGoldenHour ? "card-golden cardText card" : "card-not-golden cardText card");
 
     return(
-        <Container className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center">
                 <Card className={cardClass}>
                     <Card.Body>
                         <Card.Title>{isGoldenHour ? "It is Gold Rush Hour" : "It is not Gold Rush Hour"}</Card.Title>
@@ -79,7 +79,7 @@ export const GoldenHour = () => {
                         <Card.Text>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next Gold Rush Hour</Card.Text>
                     </Card.Body>
                 </Card>
-        </Container>
+        </div>
     );
 
 }
