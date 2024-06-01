@@ -1,6 +1,5 @@
-import { networkInterfaces } from 'os';
 import React, { useState, useEffect }  from 'react'
-import { Container, Card } from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import './GoldenHour.css'
 
 const UTC_MORNING_START_TIME = new Date();
@@ -13,16 +12,22 @@ UTC_EVENING_START_TIME.setHours(1);
 UTC_EVENING_START_TIME.setMinutes(0);
 UTC_EVENING_START_TIME.setSeconds(0);
 
+const GoldenHourState = {
+    Loading: 0,
+    GoldRushHour: 1,
+    NotGoldRushHour: 2
+}
+
 export const GoldenHour = () => {
 
     const [date, setDate] = useState(new Date());
-    const [isGoldenHour, setIsGoldenHour] = useState(false);
+    const [isGoldenHour, setIsGoldenHour] = useState(GoldenHourState.Loading);
 
     const checkGoldenHour = (currentHour: number) => {
         if(currentHour === UTC_MORNING_START_TIME.getHours() || currentHour === UTC_EVENING_START_TIME.getHours()) {
-            setIsGoldenHour(true);
+            setIsGoldenHour(GoldenHourState.GoldRushHour);
         } else {
-            setIsGoldenHour(false);
+            setIsGoldenHour(GoldenHourState.NotGoldRushHour);
         }
     }
 
@@ -69,10 +74,10 @@ export const GoldenHour = () => {
         }
     });
 
-    const cardClass = "card " + (isGoldenHour ? "card-golden" : "card-not-golden");
-    const currentDate = new Date();
+    const cardClass = "card " + (isGoldenHour === GoldenHourState.GoldRushHour ? "card-golden cardText card" : "card-not-golden cardText card");
 
     return(
+<<<<<<< HEAD
         <Container>
             <Card className={cardClass}>
                 <div className='cardText'>Current UTC Time: {date.toUTCString()}</div>
@@ -80,6 +85,21 @@ export const GoldenHour = () => {
                 <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next <a className='link-text' target="_blank" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>
             </Card>
         </Container>
+=======
+        <>
+        {GoldenHourState.GoldRushHour != GoldenHourState.Loading &&
+        <div className="d-flex justify-content-center">
+                <Card className={cardClass}>
+                    <Card.Body>
+                        <Card.Title>{isGoldenHour === GoldenHourState.GoldRushHour ? "It is Gold Rush Hour" : "It is not Gold Rush Hour"}</Card.Title>
+                        <Card.Text>Current UTC Time: {date.toUTCString()}</Card.Text>
+                        <Card.Text>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next Gold Rush Hour</Card.Text>
+                    </Card.Body>
+                </Card>
+        </div>}
+        </>
+        
+>>>>>>> 0e807889693db20284fe77c93b1de15641370074
     );
 
 }

@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is a basic website that alerts a Sea of Thieves user if it is golden hour or not.
+
 ## Available Scripts
 
 In the project directory, you can run:
