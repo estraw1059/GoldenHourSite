@@ -15,4 +15,9 @@
 
 .cardText {
     font-size: 2em;
+    font: black;
+}
+
+.link-text {
+    color: black;
 }

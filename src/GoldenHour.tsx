@@ -76,8 +76,8 @@ export const GoldenHour = () => {
         <Container>
             <Card className={cardClass}>
                 <div className='cardText'>Current UTC Time: {date.toUTCString()}</div>
-                {isGoldenHour ? <div className='cardText'>It is Gold Rush Hour</div> : <div className='cardText'>It is not Gold Rush Hour</div>}
-                <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next Gold Rush Hour</div>
+                {isGoldenHour ? <div className='cardText'>It is <a className='link-text' target="_blank" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div> : <div className='cardText'>It is not <a className='link-text' target="_blank" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>}
+                <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next <a className='link-text' target="_blank" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>
             </Card>
         </Container>
     );
