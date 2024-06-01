@@ -77,29 +77,19 @@ export const GoldenHour = () => {
     const cardClass = "card " + (isGoldenHour === GoldenHourState.GoldRushHour ? "card-golden cardText card" : "card-not-golden cardText card");
 
     return(
-<<<<<<< HEAD
-        <Container>
-            <Card className={cardClass}>
-                <div className='cardText'>Current UTC Time: {date.toUTCString()}</div>
-                {isGoldenHour ? <div className='cardText'>It is <a className='link-text' target="_blank" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div> : <div className='cardText'>It is not <a className='link-text' target="_blank" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>}
-                <div className='cardText'>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next <a className='link-text' target="_blank" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>
-            </Card>
-        </Container>
-=======
         <>
-        {GoldenHourState.GoldRushHour != GoldenHourState.Loading &&
-        <div className="d-flex justify-content-center">
-                <Card className={cardClass}>
-                    <Card.Body>
-                        <Card.Title>{isGoldenHour === GoldenHourState.GoldRushHour ? "It is Gold Rush Hour" : "It is not Gold Rush Hour"}</Card.Title>
-                        <Card.Text>Current UTC Time: {date.toUTCString()}</Card.Text>
-                        <Card.Text>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next Gold Rush Hour</Card.Text>
-                    </Card.Body>
-                </Card>
-        </div>}
+        {GoldenHourState.GoldRushHour !== GoldenHourState.Loading &&
+            <div className="d-flex justify-content-center">
+                    <Card className={cardClass}>
+                        <Card.Body>
+                            <Card.Title>{isGoldenHour === GoldenHourState.GoldRushHour ? <div>It is <a className='link-text' target='_blank' rel="noreferrer"  href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div> : <div>It is not <a target='_blank' className='link-text' rel="noreferrer" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>}</Card.Title>
+                            <Card.Text>Current UTC Time: {date.toUTCString()}</Card.Text>
+                            <Card.Text>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next <a target='_blank' rel="noreferrer" className='link-text' href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></Card.Text>
+                        </Card.Body>
+                    </Card>
+            </div>}
         </>
         
->>>>>>> 0e807889693db20284fe77c93b1de15641370074
     );
 
 }
