@@ -2,14 +2,15 @@
     margin: 20px;
     padding: 10px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .card-not-golden {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.64);
 }
 
 .card-golden {
-    background-color: green;
+    background-color: rgba(0, 255, 0, 0.64);
 }
 
 .cardText {
@@ -19,4 +20,9 @@
 
 .link-text {
     color: black;
+}
+
+.full-height {
+    height: 100vh;
+    background-color: #f8f9fa; /* Light background color */
 }

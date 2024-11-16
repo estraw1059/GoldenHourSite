@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react'
-import {Card} from 'react-bootstrap';
+import {Card, Container, Row, Col} from 'react-bootstrap';
 import './GoldenHour.css'
 
 const UTC_MORNING_START_TIME = new Date();
@@ -77,18 +77,27 @@ export const GoldenHour = () => {
     const cardClass = "card " + (isGoldenHour === GoldenHourState.GoldRushHour ? "card-golden cardText card" : "card-not-golden cardText card");
 
     return(
-        <>
-        {GoldenHourState.GoldRushHour !== GoldenHourState.Loading &&
-            <div className="d-flex justify-content-center">
-                    <Card className={cardClass}>
-                        <Card.Body>
-                            <Card.Title>{isGoldenHour === GoldenHourState.GoldRushHour ? <div>It is <a className='link-text' target='_blank' rel="noreferrer"  href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div> : <div>It is not <a target='_blank' className='link-text' rel="noreferrer" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>}</Card.Title>
-                            <Card.Text>Current UTC Time: {date.toUTCString()}</Card.Text>
-                            <Card.Text>There is {(timeToNextGoldenHour()/(1000*60*60)).toFixed(2)} hours till the next <a target='_blank' rel="noreferrer" className='link-text' href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></Card.Text>
-                        </Card.Body>
-                    </Card>
-            </div>}
-        </>
+        <Container fluid className="d-flex align-items-center justify-content-center full-height">
+            {GoldenHourState.GoldRushHour !== GoldenHourState.Loading &&
+                <Row className="justify-content-center">
+                    <Col md={8}>
+                        <Card className={cardClass}>
+                            <Card.Body>
+                                <Card.Title>
+                                    {isGoldenHour === GoldenHourState.GoldRushHour ? (
+                                        <div>It is <a className='link-text' target='_blank' rel="noreferrer" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>
+                                    ) : (
+                                        <div>It is not <a target='_blank' className='link-text' rel="noreferrer" href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></div>
+                                    )}
+                                </Card.Title>
+                                <Card.Text>Current UTC Time: {date.toUTCString()}</Card.Text>
+                                <Card.Text>There is {(timeToNextGoldenHour() / (1000 * 60 * 60)).toFixed(2)} hours till the next <a target='_blank' rel="noreferrer" className='link-text' href='https://seaofthieves.fandom.com/wiki/Gold_Rush'>Gold Rush Hour</a></Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            }
+        </Container>
         
     );
 
